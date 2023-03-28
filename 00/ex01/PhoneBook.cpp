@@ -32,20 +32,18 @@ void PhoneBook::search() const {
     std::cout << std::endl;
     std::string title = BLUE " CONTACTS " RES;
     std::string separator = "=";
-    const int tableSize = 23;
+    const int tableSize = 17;
 
-    for (int i=1; i < tableSize; i++) { std::cout << separator; }
+    for (int i=0; i < tableSize; i++) { std::cout << separator; }
     std::cout << title;
     for (int i=0; i < tableSize; i++) { std::cout << separator; }
     std::cout << std::endl;
 
-    std::cout << YELLOW << "  FIRST   " << RES << "| ";
+    std::cout << YELLOW << "  INDEX   " << RES << "| ";
+    std::cout << YELLOW << "  FIRST  " << RES << "| ";
     std::cout << YELLOW << "  LAST   " << RES << "| ";
-    std::cout << YELLOW << "  NICK   " << RES << "| ";
-    std::cout << YELLOW << "  PHONE  " << RES << "| ";
-    std::cout << YELLOW << "  SECRET" << RES;
+    std::cout << YELLOW << "  NICK  " << RES;
     std::cout << std::endl;
-    std::cout << std::setw(11) << std::setfill('-') << "+";
     std::cout << std::setw(11) << std::setfill('-') << "+";
     std::cout << std::setw(11) << std::setfill('-') << "+";
     std::cout << std::setw(11) << std::setfill('-') << "+";
@@ -54,11 +52,10 @@ void PhoneBook::search() const {
 
     for (int i = 0; i < this->_size; i++) {
         std::cout
+        << std::setw(10) << std::setfill(' ') << i << "|"
         << std::setw(10) << std::setfill(' ') << truncateStr(this->_contacts[i].getFirst()) << "|"
         << std::setw(10) << std::setfill(' ') << truncateStr(this->_contacts[i].getLast()) << "|"
-        << std::setw(10) << std::setfill(' ') << truncateStr(this->_contacts[i].getNick()) << "|"
-        << std::setw(10) << std::setfill(' ') << truncateStr(this->_contacts[i].getPhone()) << "|"
-        << std::setw(10) << std::setfill(' ') << truncateStr(this->_contacts[i].getSecret())
+        << std::setw(10) << std::setfill(' ') << truncateStr(this->_contacts[i].getNick())
         << std::endl;
     }
     std::cout << std::endl;

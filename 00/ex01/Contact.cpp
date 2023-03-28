@@ -11,11 +11,11 @@ Contact::operator bool() const {
            this->_secret != "";
 }
 
-std::string Contact::getFirst() const { return _first; }
-std::string Contact::getLast() const { return _last; }
-std::string Contact::getNick() const { return _nick; }
-std::string Contact::getPhone() const { return _phone; }
-std::string Contact::getSecret() const { return _secret; }
+std::string Contact::getFirst() const { return this->_first; }
+std::string Contact::getLast() const { return this->_last; }
+std::string Contact::getNick() const { return this->_nick; }
+std::string Contact::getPhone() const { return this->_phone; }
+std::string Contact::getSecret() const { return this->_secret; }
 
 Contact Contact::create(void) {
   std::string first, last, nick, phone, secret;

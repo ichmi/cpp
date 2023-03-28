@@ -13,7 +13,7 @@ int Account::getTotalAmount(void) { return (_totalAmount); }
 int Account::getNbDeposits(void) { return (_totalNbDeposits); }
 int Account::getNbWithdrawals(void) { return (_totalNbWithdrawals); }
 
-void Account::_displayTimestamp( void ) {
+void Account::_displayTimestamp(void) {
     std::time_t now = std::time(NULL);
     std::tm *tm = std::localtime(&now);
 

@@ -2,13 +2,10 @@
 
 int main() {
   PhoneBook phone_book;
-
-  std::cout << "Allowed operations: ADD (1), SEARCH (2), or EXIT (3)" << std::endl;
-
   std::string operation;
 
   while (true) {
-    std::cout << "Would you like to ADD a new contact, SEARCH for a contact, or EXIT? ";
+    std::cout << "Would you like to ADD (1) a new contact, SEARCH (2) for a contact, or EXIT (3)? ";
     std::getline(std::cin, operation);
 
     if (operation == "EXIT" || operation == "3") {
