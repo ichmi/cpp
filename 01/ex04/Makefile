@@ -3,7 +3,7 @@ NAME	= replace
 CC		= clang++
 FLAGS	= -Wall -Werror -Wextra -std=c++98 -pedantic
 
-SRCS	= main.cpp
+SRCS	= main.cpp Replacer.cpp
 OBJSDIR	= obj
 OBJS	= $(addprefix ${OBJSDIR}/, ${SRCS:.cpp=.o})
 
