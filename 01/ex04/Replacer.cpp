@@ -17,13 +17,7 @@ bool Replacer::validateInput(int ac, char **av) {
         return true;
     }
     this->strToFind = strToFind;
-
-    std::string const strToReplace = av[3];
-    // if (strToReplace.empty()) {
-    //     std::cout << _ERROR "<s2> must not be empty" << std::endl;
-    //     return true;
-    // }
-    this->strToReplace = strToReplace;
+    this->strToReplace = av[3];
 
     return false;
 }

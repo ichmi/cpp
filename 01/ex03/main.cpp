@@ -16,6 +16,12 @@ int main() {
         foo.attack();
     }
     {
+        Weapon weapon = Weapon("");
+		weapon.setType("");
+        HumanA foo("Foo", weapon);
+        foo.attack();
+    }
+    {
         Weapon weapon = Weapon("Pick axe");
         HumanA foo("", weapon);
         foo.attack();

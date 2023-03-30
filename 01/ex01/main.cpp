@@ -1,12 +1,8 @@
 #include "Zombie.hpp"
 
-#define BLUE "\x1b[38;5;25m"
-#define YELLOW "\x1b[38;5;220m"
-#define RES "\x1b[0m"
-
 static void spawnHordeLevel(int N, std::string zombieNames, std::string level) {
     if (level.empty()) {
-        std::cout << BLUE << "Some zombie horde" << RES << std::endl;
+        std::cout << BLUE "Some zombie horde" RES << std::endl;
     } else {
         std::cout << BLUE << level << RES << std::endl;
     }
@@ -26,14 +22,15 @@ static void spawnHordeLevel(int N, std::string zombieNames, std::string level) {
 }
 
 int main() {
-    spawnHordeLevel(-1, "Baz", "1st invalid");
-    spawnHordeLevel(0, "Baz", "2nd invalid");
-    spawnHordeLevel(5, "", "3rd invalid");
+    spawnHordeLevel(-1, "Baz", "Negative value");
+    spawnHordeLevel(0, "Baz", "Zero value");
 
-    spawnHordeLevel(1, "Foo", "First zombie horde");
-    spawnHordeLevel(5, "Bar", "Second zombie horde");
-    spawnHordeLevel(10, "Baz", "Third zombie horde");
-    spawnHordeLevel(256, "Dummy", "Fourth zombie horde");
+    spawnHordeLevel(1, "Foo", "1 zombie");
+    spawnHordeLevel(5, "Bar", "5 zombies");
+    spawnHordeLevel(10, "Baz", "10 zombies");
+    spawnHordeLevel(256, "Dummy", "256 zombies");
+
+    spawnHordeLevel(7, "", "Generic zombie horde of 7");
 
     return 0;
 }

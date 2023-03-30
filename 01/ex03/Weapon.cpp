@@ -14,9 +14,8 @@ const std::string &Weapon::getType(void) const {
 
 void Weapon::setType(std::string value) {
     if (value.empty()) {
-        std::cout << "Invalid weapon" << std::endl;
-        return ;
-    }
-
-    this->type = value;
+		this->type = "Generic weapon";
+    } else {
+	    this->type = value;
+	}
 }

@@ -6,8 +6,7 @@ Zombie* zombieHorde(int N, std::string name) {
         return NULL;
     }
     if (name.empty()) {
-        std::cout << "You must give a zombie name" << std::endl;
-        return NULL;
+        name = "Generic Zombie";
     }
 
     Zombie *horde = new Zombie[N];
