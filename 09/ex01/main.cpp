@@ -4,7 +4,7 @@ int testSubject(void);
 
 int main(int ac, char **av) {
     if (ac != 2) {
-        std::cerr << RED "- " GRAY "Error: invalid number of arguments"<< std::endl;
+        std::cerr << RED "- " GRAY "Error: invalid number of arguments" RES << std::endl;
         return 1;
     }
 
