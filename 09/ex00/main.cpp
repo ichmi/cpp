@@ -2,7 +2,7 @@
 
 int main(int ac, char **av) {
     if (ac != 2) {
-        std::cerr << RED "- " GRAY "Error: missing input data file"<< std::endl;
+        std::cerr << RED "- " GRAY "Error: missing input data file" RES << std::endl;
         return 1;
     }
 
