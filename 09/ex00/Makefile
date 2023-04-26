@@ -33,6 +33,13 @@ re: fclean all
 .PHONY += re
 
 
+# Get intranet resources
+resources:
+	rm -rf data.csv input.txt
+	wget https://raw.githubusercontent.com/ichmi/cpp/main/09/ex00/data.csv
+	wget https://raw.githubusercontent.com/ichmi/cpp/main/09/ex00/input.txt
+
+
 # Valgrind setup
 VOPTIONS	= --show-leak-kinds=all --leak-check=full -q
 

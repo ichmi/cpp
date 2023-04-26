@@ -37,7 +37,7 @@ re: fclean all
 VOPTIONS	= --show-leak-kinds=all --leak-check=full -q
 
 v: ${NAME}
-	valgrind ${VOPTIONS} ./$^ --eval
+	valgrind ${VOPTIONS} ./$^ `shuf -i 1-100000 -n 3000 | tr "\n" " "`
 .PHONY += v
 
 

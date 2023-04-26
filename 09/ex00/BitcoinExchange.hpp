@@ -14,12 +14,9 @@
 #include <algorithm>
 #include <map>
 #include <memory>
-#include <string>
 #include <fstream>
 #include <sstream>
-#include <stdexcept>
 #include <iomanip>
-#include <ctime>
 
 class BitcoinExchange {
     private:

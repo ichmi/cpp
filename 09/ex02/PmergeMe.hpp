@@ -11,28 +11,35 @@
 
 #include <iostream>
 #include <vector>
-#include <list>
+#include <deque>
 #include <cstdlib>
 #include <iomanip>
 #include <sstream>
+#include <algorithm>
 
 class PmergeMe {
     private:
-        PmergeMe(void);
+        int const chunkSize;
 
-        static int const chunkSize;
+        typedef std::vector<int>::iterator vit;
+        void sort(std::vector<int> &vec, vit l, vit r);
+        void mergeVec(vit l, vit m, vit r);
 
-        static void sort(std::vector<int> &vec, int const l, int const r);
-        static void merge(std::vector<int> &vec, int l, int m, int r);
+        typedef std::deque<int>::iterator  dit;
+        void sort(std::deque<int> &deq, dit l, dit r);
+        void mergeDeq(dit l, dit m, dit r);
 
     public:
+        PmergeMe(void);
         PmergeMe(PmergeMe const &obj);
         ~PmergeMe(void);
         PmergeMe &operator=(PmergeMe const &rhs);
 
+        void sort(std::vector<int> &vec);
+        void displaySequence(std::vector<int> const &vec);
 
-        static void sort(std::vector<int> &sequence);
-        static void displaySequence(std::vector<int> const &seq);
+        void sort(std::deque<int> &deq);
+        void displaySequence(std::deque<int> const &deq);
 };
 
 #endif
