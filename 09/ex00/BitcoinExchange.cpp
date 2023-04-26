@@ -22,8 +22,15 @@ BitcoinExchange::BitcoinExchange(std::string const &dbFile) {
 
     std::string row;
     std::getline(*ifs, row);
+    if (ifs->eof()) {
+        throw std::invalid_argument("Bad database file: Empty");
+    }
 
     while (std::getline(*ifs, row)) {
+        if (row.empty()) {
+            continue ;
+        }
+
         int commaCount = 0;
         for (std::string::iterator it = row.begin(); it != row.end(); ++it) {
             if (*it == ',') {
@@ -144,6 +151,9 @@ void BitcoinExchange::exchange(std::string const &infile) const {
 
     std::string row;
     std::getline(ifs, row);
+    if (ifs.eof()) {
+        throw std::invalid_argument("Bad input: Empty file");
+    }
 
     while (std::getline(ifs, row)) {
         if (row.empty()) {
@@ -198,6 +208,10 @@ void BitcoinExchange::exchange(std::string const &infile) const {
         }
 
         std::map<std::string, double>::const_iterator it = btcPriceMap.lower_bound(queryDate);
+
+        if (btcPriceMap.empty()) {
+            throw std::invalid_argument("Bad input: Database is empty");
+        }
 
         if (it != btcPriceMap.begin()) {
             if (it == btcPriceMap.end()) {
